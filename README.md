@@ -1,4 +1,4 @@
-# SImCA (Self-IMproving CAptioning)
+# Embodied Image Captioning: Self-supervised Learning Agents for Spatially Coherent Image Descriptions
 
 ## Table of Contents
 1. [Setup](#setup)
