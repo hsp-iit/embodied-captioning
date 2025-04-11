@@ -42,12 +42,6 @@ cd -
 - Install module: `python setup.py develop`
 - Modify `base_dir` inside `confs/train_policy.yaml` as the absolute path of this project
 
-
-In envs/dataset.py line 363:
-```
-# Change path to scene_id due to typo
-episode_cfg["scene_id"] = episode_cfg["scene_id"].replace("//", "/")
-```
    
 ## Data <a name="data"></a>
 All the data are contained inside the `data` directory.
