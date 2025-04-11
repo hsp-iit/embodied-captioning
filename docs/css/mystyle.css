@@ -1,0 +1,270 @@
+body {
+    margin: 0;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 0;
+    font-family: serif;
+    text-align: center;
+}
+
+img {
+  display: block;
+  width: 80%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+img.res {
+  width: 100%;
+  height: auto;
+}
+
+a.icon_publication {
+   color: black;
+   margin-left: 5%;
+}
+
+div.text {
+  text-align: justify;
+}
+
+h2.section{
+  text-align: left;
+}
+
+pre {
+    background-color: #eeee;
+    overflow: auto;
+}
+
+footer {
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 20px;
+/*    margin-top: 1em;*/
+}
+
+table.center {
+  font-weight: normal;
+  border-collapse:collapse;
+  width: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid black;
+}
+
+table td:nth-child(1), table th:nth-child(1){
+  text-align:right;
+}
+table td:nth-child(2), table th:nth-child(2){
+  padding-left: 5px;
+  text-align:center;
+}
+table td:nth-child(3), table th:nth-child(3){
+  padding-left: 5px;
+  text-align:center;
+}
+table td:nth-child(4), table th:nth-child(4){
+  padding-left: 5px;
+  text-align:center;
+}
+table td:nth-child(5), table th:nth-child(5){
+  padding-left: 5px;
+  text-align:center;
+}
+table td:nth-child(6), table th:nth-child(6){
+  padding-left: 5px;
+  text-align:center;
+}
+table td:nth-child(7), table th:nth-child(7){
+  padding-left: 5px;
+  text-align:center;
+}
+table td:nth-child(8), table th:nth-child(8){
+  padding-left: 5px;
+  text-align:center;
+}
+table td:nth-child(9), table th:nth-child(9){
+  padding-left: 5px;
+  text-align:center;
+}
+table td:nth-child(10), table th:nth-child(10){
+  padding-left: 5px;
+  text-align:center;
+}
+
+thead th {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+tbody ts, thead th{
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+th[rowspan] td[rowspan]{
+  vertical-align:middle;
+}
+
+tr.divider td{
+ border-top: 1px solid black;
+ padding: 0;
+}
+
+sup {
+  vertical-align: super;
+  font-size: 0.5em;
+}
+
+th.black {
+  background-color: rgb(0, 0, 0);
+}
+th.red {
+  background-color: rgb(255, 0, 0);
+}
+th.green {
+  background-color: rgb(0, 255, 0);
+}
+th.white {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid;
+}
+th.blue {
+  background-color: rgb(0, 0, 255);
+}
+
+header
+  {
+    margin-bottom: 2em;
+    line-height: 1.7em;
+  }
+  
+    header h2
+    {
+      font-size: 2.5em;
+    }
+
+    header .byline
+    {
+      display: block;
+      margin: 0.5em 0 0 0;
+      padding: 0 0 0.5em 0;
+      text-transform: uppercase;
+      font-size: 1.4em;
+    }
+
+
+
+#header
+  {
+    position: relative;
+    background: #FFF;
+  }
+
+    #header .container
+    {
+      position: relative;
+      padding: 2em 0em;
+    }
+
+/*********************************************************************************/
+/* Logo                                                                          */
+/*********************************************************************************/
+
+#logo
+{
+  position: absolute;
+  left: 0em;
+  top: 1em;
+  width: 30%;
+  float: left;
+}
+  
+#logo h1
+  {
+  }
+
+#logo a
+  {
+    display: block;
+    text-decoration: none;
+/*    font-size: 2.8em;*/
+/*    font-weight: 600;*/
+  }
+
+
+#banner
+  {
+    float: left;
+/*    position: absolute;*/
+/*    right: 0em;*/
+/*    top: 2.2em;*/
+/*    padding: 12em 0em;*/
+    width: 70%;
+    background-image: url('assets/circles.jpg') no-repeat center;
+    background-size: cover;
+    color: #fff;
+  }
+
+
+/*********************************************************************************/
+/* Footer                                                                        */
+/*********************************************************************************/
+  
+  #footer
+  {
+    position: relative;
+    /*color: rgba(255,255,255,.4);*/
+  }
+  
+  #footer .container
+  {
+  }
+
+  #footer h2
+  {
+    padding-bottom: 1.5em;
+    font-size: 1.6em;
+    /*color: #FFF;*/
+  }
+
+  #footer strong
+  {
+    color: rgba(255,255,255,.7);
+  }
+
+
+
+  ul.style5
+    {
+      overflow: hidden;
+      margin: 0em 0em 1em 0em;
+      padding: 0em;
+      list-style: none;
+    }
+
+    ul.style5 li
+      {
+        float: left;
+        padding: 0.25em 0.25em;
+        line-height: 0;
+      }
+      
+      ul.style5 a
+      {
+      }
+
+#featured
+  {
+    position: relative;
+  }
+  
+  #featured .divider
+  {
+    border-bottom: 1px solid #303030;
+  }
+

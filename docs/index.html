@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Embodied Image Captioning</title>
+    <meta name="author" content="embodied-captioning"/>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta property="og:title" content="Title"/>
+    <meta property="og:description" content=""/>
+    <meta property="og:image" content="assets/.png"/>
+
+    <script src="js/init.js"></script>
+
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="css/academicons.css">
+    <link rel="stylesheet" href="css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<div>
+    <h1>Embodied Image Captioning: Self-supervised Learning Agents for Spatially Coherent Image Descriptions</h1>
+    <h3>T. Galliena, T. Apicella, S. Rosa, P. Morerio, A. Del Bue, L. Natale</h3>
+    Istituto Italiano di Tecnologia, Genoa, Italy
+    <br>
+    <br>
+    <br>
+</div>
+
+<div class="links">
+    <!-- <a href="" class="icon_publication"><i class="fa fa-file-pdf-o" style="font-size:20px;"> Paper</i></a> -->
+    <a href="" class="icon_publication"><i class="ai ai-arxiv ai-3x"
+                                              style="font-size:20px;"> arXiv</i></a>
+    <a href="" class="icon_publication"><i class="fa fa-github"
+                                              style="font-size:20px;"> Code</i></a>
+</div>
+
+<br>
+
+<div class="image">
+    <img src="assets/framework.png"/>
+</div>
+
+<div class="text">
+    <p>
+        We present a self-supervised method to improve an agent's abilities in describing arbitrary objects
+        while actively exploring a generic environment. This is a challenging problem, as current models struggle to
+        obtain coherent image captions due to different camera viewpoints and clutter.
+        We propose a three-phase framework to fine-tune existing captioning models that enhances caption accuracy and
+        consistency across views via a consensus mechanism.
+        First, an agent explores the environment, collecting noisy image-caption pairs.
+        Then, a consistent pseudo-caption for each object instance is distilled via consensus using a large language
+        model.
+        Finally, these pseudo-captions are used to fine-tune an off-the-shelf captioning model, with the addition of
+        contrastive learning.
+        We analyse the performance of the combination of captioning models, exploration policies, pseudo-labeling
+        methods, and fine-tuning strategies, on our manually labeled test set.
+        Results show that a policy can be trained to mine samples with higher disagreement compared to classical
+        baselines.
+        Our pseudo-captioning method, in combination with all policies, has a higher semantic similarity compared to
+        other existing methods, and fine-tuning improves caption accuracy and consistency by a significant margin.
+    </p>
+</div>
+
+<br>
+<div>
+    <h2 class="section">Reference</h2>
+    <div class="text">
+        If you use the information in the paper please cite the following reference.<br><br>
+        Plain text format
+        <pre>
+        ...
+        </pre>
+        <br>
+        Bibtex format
+        <pre> 
+        ...
+        </pre>
+    </div>
+</div>
+
+<br>
+
+<h2 class="section">Contact</h2>
+<div class="text">
+    If you have any further enquiries, question, or comments, please open an issue on the Github repository page.
+    <br>
+    <br>
+</div>
+<br><br>
+
+<!-- Featured -->
+<div id="featured">
+    <div class="divider"></div>
+</div>
+<!-- /Featured -->
+
+<div id="footer">
+    <div class="container">
+    </div>
+</div>
+<br><br>
+</body>
+</html>
