@@ -1,0 +1,239 @@
+# @package _global_
+exp_name: gibson_captioning_generate
+
+defaults:
+  - habitat/task/measurements@habitat.task.measurements.top_down_map: top_down_map
+
+habitat:
+  seed: 100
+  env_task: Habitat3Env
+  env_task_gym_dependencies: []
+  env_task_gym_id: ''
+
+
+  environment:
+    max_episode_steps: 300
+    max_episode_seconds: 10000000
+    iterator_options:
+      max_scene_repeat_steps: 50000
+
+  task:
+    type: FrontExp-v0
+    reward_measure: distance_to_goal_reward
+    success_measure: spl
+    goal_sensor_uuid: pointgoal_with_gps_compass
+    physics_target_sps: 60
+    success_reward: 2.5
+    slack_reward: -0.01
+    #actions: discrete_waypoint_controller
+    actions: 
+      stop:
+        type: StopAction
+      move_forward:
+        type: MoveForwardAction
+      turn_left:
+        type: TurnLeftAction
+        turn_angle: 10
+      turn_right:
+        type: TurnRightAction
+        turn_angle: 10
+      look_up:
+        type: LookUpAction
+        tilt_angle: 10  
+      look_down:
+        type: LookDownAction
+        tilt_angle: 10
+    end_on_success: false
+    lab_sensors:
+      pointgoal_with_gps_compass_sensor:
+        type: PointGoalWithGPSCompassSensor
+        goal_format: POLAR
+        dimensionality: 2
+    measurements:
+      distance_to_goal:
+        type: DistanceToGoal
+        distance_to: POINT
+      success:
+        type: Success
+        success_distance: 0.2
+      spl:
+        type: SPL
+      distance_to_goal_reward:
+        type: DistanceToGoalReward
+
+
+  simulator:
+    type: Sim-v0
+    forward_step_size: 0.25
+    turn_angle: 10
+    create_renderer: False
+    requires_textures: true
+    lag_observations: 0
+    auto_sleep: false
+    step_physics: true
+    concur_render: false
+    needs_markers: true
+    update_articulated_agent: true
+    default_agent_navmesh: true
+    scene_dataset: data/scene_datasets/gibson_semantic/gibson_semantic.scene_dataset_config.json
+    additional_object_paths: []
+    navmesh_include_static_objects: False
+    seed: 1
+    default_agent_id: 0
+    debug_render: false
+    debug_render_robot: false
+    kinematic_mode: false
+    debug_render_goal: true
+    robot_joint_start_noise: 0.0
+    #ctrl_freq: 120.0
+    #ac_freq_ratio: 4
+    #load_objs: true
+    #hold_thresh: 0.09
+    #grasp_impulse: 1000.0
+    agents:
+      main_agent:
+        sim_sensors:
+          rgb_sensor:
+            type: HabitatSimRGBSensor
+            width: 1280
+            height: 1280
+            hfov: 79
+            position:
+              - 0.0
+              - 0.88
+              - 0.0
+          depth_sensor:
+            type: HabitatSimDepthSensor
+            height: 1280
+            width: 1280
+            hfov: 79
+            min_depth: 0.5
+            max_depth: 15.0
+            position:
+              - 0.0
+              - 0.88
+              - 0.0
+            normalize_depth: False
+          # semantic_sensor:
+          #   type: HabitatSimSemanticSensor
+          #   width: 1280
+          #   height: 1280
+          #   position:
+          #     - 0.0
+          #     - 0.88
+          #     - 0.0
+        height: 1.2
+        radius: 0.01
+        max_climb: 0.1
+        max_slope: 5.0
+        #agent_type: "rgbd_agent"
+    agents_order:
+      - 'main_agent'
+    habitat_sim_v0:
+      gpu_device_id: 0
+      gpu_gpu: False
+      allow_sliding: True
+    renderer:
+      enable_batch_renderer: False
+      composite_files: None
+      classic_replay_renderer: False
+  dataset:
+    type: ExpNav-v1
+    data_path: data/datasets/pointnav/gibson/v2/{split}/{split}.json.gz
+    split: val
+    scenes_dir: data/scene_datasets
+    content_scenes:
+    - '*'
+    # repeat: 1
+  gym:
+    obs_keys: null
+    action_keys: null
+    achieved_goal_keys: []
+    desired_goal_keys: []
+
+
+habitat_baselines:
+  goal_sensor_uuid: pointgoal_with_gps_compass
+  torch_gpu_id: 0
+  tensorboard_dir: "tb"
+  video_dir: "video_dir"
+  test_episode_count: -1
+  total_num_steps: 1000000
+  eval_ckpt_path_dir: "checkpoints"
+  num_environments_per_gpu: 0
+  num_environments: 1
+  num_environments_first_gpu: 1
+  success_distance: 1.0
+  num_processes: 3
+  checkpoint_folder: "checkpoints"
+  trainer_name: "frontierbaseline-v2"
+  checkpoint_interval: -1
+  num_updates: -1
+  log_interval: 25
+  num_checkpoints: 100
+  goal_tentative: 5 # number of tentative to found the goal for an env
+  # Force PyTorch to be single threaded as
+  # this improves performance considerably
+  force_torch_single_threaded: True
+  sensors: [ 'OBJECT_DETECTOR_GT_SENSOR' ]
+  # OBJECT_DETECTOR_GT_SENSOR:
+  #   TYPE: object_detector_gt # _discard_occlusions
+  measurements: [ 'DISTANCE_TO_GOAL', 'SUCCESS', 'SPL', 'top_down_map' ]
+  eval:
+    split: "train"
+      # rl:
+      #   policy:
+      #     name: "PointNavResNetPolicy"
+
+ppo:
+  cuda: True
+  use_recurrent_global: 0
+  g_hidden_size: 256
+  global_downscaling: 2
+  clip_param: 0.2
+  ppo_epoch: 4
+  num_mini_batch: 32
+  value_loss_coeff: 0.5
+  entropy_coef: 0.001
+  global_lr: 2.5e-5
+  eps: 1.0e-5
+  max_grad_norm: 0.5
+  num_global_steps: 20 # training time
+  replanning_steps: 80 # replanning time
+  save_periodic: 100   # model saving time
+  load_checkpoint_path: /mnt/storage/tgalliena/SImCa/checkpoints/ours.ckpt
+  load_checkpoint: True
+  use_gae: True
+  gamma: 0.99
+  tau: 0.95
+  visualize: True
+  mode: generate
+
+
+captioner:
+  gpu_ids: 0 # [0, 1]
+  arch_name: "coca"
+  model_name: "coca_ViT-L-14"
+  checkpoint_name: "mscoco_finetuned_laion2B-s13B-b90k"
+  height: 224
+  width: 224
+  mode: "training" # [training, inference]
+  debug: False
+
+
+device_config:
+  captioner: 
+    device: "cpu"
+  object_detector: 
+    device: "cpu"
+  sentence_transformer:
+    device: "cpu"
+  
+pseudolabeler:
+  use_captioner: True
+  device_map:
+   captioner: 0
+   text_encoder: 0
+   detector: 0 
+  output_folder: '/mnt/storage/tgalliena/SImCa/data/pseudolabeler_results/gibson_complete_test_coca/'
+  input_folder: "/mnt/storage/tgalliena/SImCa/exps/policies/gibson_complete_test/dataset"

@@ -1,0 +1,30 @@
+# @package _group_
+
+batch_size: 16
+prune: True
+n_iterations: 50
+proposal_checkpoint: data/models/hres_gibson_def/proposal.ckpt
+loss_margin: 0.3
+exp_base_name: pipeline_online_soft
+exp_name: soft_online_ce_sgd
+lr: 0.00001
+optimizer: SGD
+optimizer_params:
+  momentum: 0.9
+  nesterov: True
+  weight_decay: 5e-4
+
+use_coco: False
+transform_type: strong_image
+teacher_momentum: 0.99
+temperature: 1
+pipeline: OnlinePipeline
+student_model: SoftMultiStageModel
+consensus: vanilla
+alpha: 0.1
+loss_weights:
+  loss_cls: 1.0
+  loss_soft: 1.0
+  contrastive_loss: 0.0
+  loss_mask: 1.0
+

@@ -1,0 +1,17 @@
+# @package _group_
+
+batch_size: 16
+triplet_loss_type: hard
+loss_margin: 0.3
+exp_base_name: vanilla
+temperature: 3
+optimizer: Adam
+lr: 0.0001
+optimizer_params:
+  amsgrad: False
+use_gt_matching: True
+loss_weights:
+  loss_cls: 1.0
+  contrastive_loss: 1.0
+
+

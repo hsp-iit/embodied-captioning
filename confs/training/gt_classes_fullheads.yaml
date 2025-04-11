@@ -1,0 +1,14 @@
+# @package _group_
+
+batch_size: 16
+
+momentum: 0.9
+optimizer: SGD
+lr: 0.001
+optimizer_params:
+  momentum: 0.9
+  nesterov: True
+loss_weights:
+  loss_mask: 1.0
+exp_base_name: training_detector_init_head_gt
+

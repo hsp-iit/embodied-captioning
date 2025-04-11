@@ -1,0 +1,18 @@
+# @package _group_
+
+batch_size: 16
+triplet_loss_type: hard
+loss_margin: 0.3
+exp_base_name: training_detector_super_maxcounting
+lr: 0.2
+optimizer: LARS
+optimizer_params:
+  momentum: 0.9
+  nesterov: True
+  weight_decay: 1.5e-06
+  
+loss_weights:
+  loss_cls: 1.0
+  loss_mask: 0.0
+  
+

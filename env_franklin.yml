@@ -1,0 +1,32 @@
+name: SImCa
+channels:
+  - aihabitat
+  - conda-forge
+dependencies:
+  - cmake=3.14.0
+  - python=3.9
+  - openmpi
+  - git
+  - albumentations=2.0.0
+  - opencv
+  - pytorch
+  - torchvision
+  - hydra-core
+  - huggingface_hub
+  - regex
+  - safetensors
+  - wandb
+  - tokenizers
+  - einops
+  - timm
+  - peft
+  - detectron2
+  - ftfy
+  - braceexpand
+  - webdataset
+  - nltk
+  - rouge-score
+  - torchmetrics
+  - pytorch-lightning
+  - sentence-transformers
+  - openjdk=8.0.112

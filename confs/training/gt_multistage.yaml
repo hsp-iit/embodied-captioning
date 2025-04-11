@@ -1,0 +1,19 @@
+# @package _group_
+
+batch_size: 16
+
+proposal_checkpoint: none
+loss_margin: 0.3
+exp_base_name: gt_multistage
+lr: 0.0001
+
+optimizer: Adam
+optimizer_params:
+  amsgrad: False
+  
+loss_weights:
+  loss_cls: 1.0
+  contrastive_loss: 0.0
+
+  
+

@@ -1,0 +1,18 @@
+# @package _group_
+
+batch_size: 16
+
+proposal_checkpoint: data/models/hres_gibson_def/proposal.ckpt
+loss_margin: 0.3
+exp_base_name: multi_stage_soft
+lr: 0.0001
+optimizer: Adam
+optimizer_params:
+  amsgrad: False
+temperature: 3
+  
+loss_weights:
+  loss_cls: 1.0
+  contrastive_loss: 0.0
+  
+

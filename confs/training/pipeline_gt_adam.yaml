@@ -1,0 +1,26 @@
+# @package _group_
+
+batch_size: 8
+prune: True
+n_iterations: 1
+proposal_checkpoint: none
+loss_margin: 0.3
+exp_base_name: pipeline_soft
+exp_name: ground_truth_adam
+lr: 0.00003
+optimizer: Adam
+optimizer_params:
+  amsgrad: False
+transform_type: strong_image
+teacher_momentum: 0.99
+temperature: 2
+pipeline: GTPipeline
+student_model: MultiStageModel
+consensus: logits
+alpha: 0.9
+loss_weights:
+  loss_cls: 1.0
+  loss_soft: 1.0
+  contrastive_loss: 0.0
+  loss_mask: 1.0
+

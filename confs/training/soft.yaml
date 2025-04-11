@@ -1,0 +1,16 @@
+# @package _group_
+
+batch_size: 8
+
+loss_margin: 0.3
+exp_base_name: training_soft_labels
+lr: 0.0001
+optimizer: Adam
+optimizer_params:
+  amsgrad: False
+temperature: 2.0
+loss_weights:
+  loss_cls: 1.0
+  contrastive_loss: 1.0
+  
+

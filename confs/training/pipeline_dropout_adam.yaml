@@ -1,0 +1,29 @@
+# @package _group_
+
+batch_size: 16
+prune: True
+n_iterations: 50
+proposal_checkpoint: data/models/hres_gibson_def/proposal.ckpt
+loss_margin: 0.3
+exp_base_name: pipeline_soft
+exp_name: dropout_soft_sgd
+lr: 0.001
+optimizer: AdamW
+optimizer_params:
+  eps: 1e-08
+
+use_coco: False
+transform_type: none
+dropout_p: 0.1
+teacher_momentum: 0.99
+temperature: 2
+pipeline: Pipeline
+student_model: SoftDropoutMultiStageModel
+consensus: vanilla
+alpha: 0.1
+loss_weights:
+  loss_cls: 1.0
+  loss_soft: 1.0
+  contrastive_loss: 0.0
+  loss_mask: 1.0
+

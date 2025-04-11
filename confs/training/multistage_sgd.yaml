@@ -1,0 +1,16 @@
+# @package _group_
+
+batch_size: 16
+
+proposal_checkpoint: data/models/hres_gibson_def/proposal.ckpt
+loss_margin: 0.3
+exp_base_name: multi_stage_soft
+lr: 0.001
+optimizer: SGD
+optimizer_params:
+  momentum: 0.9
+  nesterov: True
+temperature: 3
+  
+loss_weights:
+  loss_cls: 1.0

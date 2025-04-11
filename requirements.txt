@@ -1,0 +1,24 @@
+# base
+attrs
+numpy-quaternion
+opencv-python
+scikit-image
+scikit-learn
+connected-components-3d
+pandas
+
+# legacy
+kornia
+
+# models
+# detectron2
+open_clip_torch
+sentence-transformers
+
+# training
+pytorch_lightning
+wandb
+albumentations
+accelerate
+bitsandbytes
+torcheval

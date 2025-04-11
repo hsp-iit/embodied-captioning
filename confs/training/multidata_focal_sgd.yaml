@@ -1,0 +1,15 @@
+# @package _group_
+
+batch_size: 16
+triplet_loss_type: hard
+loss_margin: 0.3
+exp_base_name: multidataset_focal
+temperature: 3
+optimizer: SGD
+lr: 0.001
+optimizer_params:
+  momentum: 0.9
+use_gt_matching: True
+loss_weights:
+  loss_cls: 1.0
+
