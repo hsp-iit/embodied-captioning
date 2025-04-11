@@ -4,6 +4,10 @@
 1. [Setup](#setup)
 2. [Data](#data)
 3. [Demo](#demo)
+4. [Contributing](#contributing)
+5. [Credits](#credits)
+6. [Enquiries, Question and Comments](#enquiries-question-and-comments)
+7. [License](#license)
 
 
 ## Setup <a name="setup"></a>
@@ -129,3 +133,24 @@ Start from `confs/habitat/gibson_goal_exploration.yaml`
 ### Generate from goalexploration policy
 Start from `confs/habitat/gibson_goal_exploration.yaml`
 - `mode` set to "generate"
+
+
+## Contributing <a name="contributing"></a>
+
+If you find an error, if you want to suggest a new feature or a change, you can use the issues tab to raise an issue with the appropriate label. 
+
+
+## Credits <a name="credits"></a>
+
+
+```
+```
+
+
+## Enquiries, Question and Comments <a name="enquiries-question-and-comments"></a>
+
+If you have any further enquiries, question, or comments, or you would like to file a bug report or a feature request, please use the Github issue tracker. 
+
+
+## Licence <a name="license"></a>
+This work is licensed under the MIT License. To view a copy of this license, see [LICENSE](LICENSE).
