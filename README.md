@@ -7,7 +7,7 @@
 
 
 ## Setup <a name="setup"></a>
-- Clone repository: `git clone https://github.com/TommyBsk/SImCa -b habitat3`
+- Clone repository: `git clone https://github.com/hsp-iit/embodied-captioning.git`
 - Clone submodules: `git submodule update --init --recursive`
 - Create and activate conda env: 
 ```
