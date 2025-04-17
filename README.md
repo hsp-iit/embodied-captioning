@@ -69,7 +69,7 @@ All the data are contained inside the `data` directory.
 | Scenes models              | Extract path                                   | Archive size |
 | ---                           | ---                                            | ---          |
 | [Gibson](#Gibson)          | `data/scene_datasets/gibson/{scene}.glb`       | 1.5 GB       |
-| [MatterPort3D](#Matterport3D) | `data/scene_datasets/mp3d/{scene}/{scene}.glb` | 15 GB        |
+| [HM3D](#HM3D) | `data/scene_datasets/hm3d/{split}/00\d\d\d-{scene}/{scene}.basis.glb` | 130 GB        |
 
 #### MatterPort
 - Follow instruction in the main [Habitat-lab](https://github.com/facebookresearch/habitat-lab) repository 
