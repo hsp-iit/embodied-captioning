@@ -5,7 +5,7 @@ We present a self-supervised method to improve an agent's abilities in describin
 [[arXiv](https://doi.org/10.48550/arXiv.2504.08531)] [[webpage](https://hsp-iit.github.io/embodied-captioning/)]
 
 <p align="center">
-<img src="docs/assets/framework.png" width="920" height="480" />
+<img src="docs/assets/framework.png" width="920" />
 </p>
 
 ## Table of Contents
