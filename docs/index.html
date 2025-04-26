@@ -64,7 +64,42 @@
         other existing methods, and fine-tuning improves caption accuracy and consistency by a significant margin.
     </p>
 </div>
+<br>
+<div>
+    <h2 class="section">Approach</h2>
+    <div class="text">
+        <h3>Exploration</h3>
+        <p>
+            The agent navigates the environment using any exploration policy chosen by the user, allowing full flexibility in how observations are collected. 
+            In addition to this, we train a reinforcement learning (RL) policy that explicitly encourages the agent to collect object samples 
+            where the captioning model exhibits high disagreement across different viewpoints. 
+            This targeted exploration improves the quality and diversity of the collected dataset, focusing on challenging and informative samples.
+        </p>
 
+        <h3>Pseudo-captioning</h3>
+        <p>
+            From the collected image-caption pairs, we apply a consensus mechanism 
+            using a large language model to distill a consistent pseudo-caption for each object instance, 
+            reducing noise from different viewpoints and descriptions.
+        </p>
+
+        <h3>Fine-tuning</h3>
+        <p>
+            The distilled pseudo-captions are used to fine-tune an existing captioning model. 
+            We additionally apply contrastive learning techniques to further improve consistency and semantic accuracy across multiple views of the same object.
+        </p>
+        <br><br>
+        <h3>Method Overview Video</h3>
+        <div class="video">
+            <video width="720" height="405" controls>
+                <source src="assets/method.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <br><br>
+    </div>
+</div>
+<br>
 <br>
 <div>
     <h2 class="section">Reference</h2>
