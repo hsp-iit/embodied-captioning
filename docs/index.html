@@ -1,149 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Embodied Image Captioning</title>
-    <meta name="author" content="embodied-captioning"/>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
 
-    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <meta name="description" content=""/>
-    <meta name="keywords" content=""/>
-    <meta property="og:title" content="Title"/>
-    <meta property="og:description" content=""/>
-    <meta property="og:image" content="assets/.png"/>
 
-    <script src="js/init.js"></script>
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="css/mystyle.css">
-    <link rel="stylesheet" href="css/academicons.css">
-    <link rel="stylesheet" href="css/academicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <title>Embodied-Captioning</title>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="css/bulma.min.css">
+  <link rel="stylesheet" href="css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="css/bulma-slider.min.css">
+  <link rel="stylesheet" href="css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="js/fontawesome.all.min.js"></script>
+  <script src="js/bulma-carousel.min.js"></script>
+  <script src="js/bulma-slider.min.js"></script>
+  <script src="js/index.js"></script>
+  <!-- Bulma Carousel CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel/dist/css/bulma-carousel.min.css">
+
+<!-- Bulma Carousel JS -->
+<script src="https://cdn.jsdelivr.net/npm/bulma-carousel/dist/js/bulma-carousel.min.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    bulmaCarousel.attach('#results-carousel', {
+      slidesToScroll: 1,
+      slidesToShow: 1,
+      autoplay: false,
+      loop: true,
+      navigation: true,
+      pagination: true
+    });
+  });
+</script>
 </head>
-
 <body>
-<div>
-    <h1>Embodied Image Captioning: Self-supervised Learning Agents for Spatially Coherent Image Descriptions</h1>
-    <h3>T. Galliena, T. Apicella, S. Rosa, P. Morerio, A. Del Bue, L. Natale</h3>
-    Istituto Italiano di Tecnologia, Genoa, Italy
-    <br>
-    <br>
-    <br>
-</div>
 
-<div class="links">
-    <!-- <a href="" class="icon_publication"><i class="fa fa-file-pdf-o" style="font-size:20px;"> Paper</i></a> -->
-    <a href="https://doi.org/10.48550/arXiv.2504.08531" class="icon_publication"><i class="ai ai-arxiv ai-3x"
-                                              style="font-size:20px;"> arXiv</i></a>
-    <a href="https://github.com/hsp-iit/embodied-captioning" class="icon_publication"><i class="fa fa-github"
-                                              style="font-size:20px;"> Code</i></a>
-</div>
 
-<br>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Embodied Image Captioning: Self-supervised Learning Agents
+for Spatially Coherent Image Descriptions</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/tommasogalliena" target="_blank">Tommaso Galliena</a>,</span>
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/tommaso-apicella" target="_blank">Tommaso Apicella</a>,</span>
+                  <span class="author-block">
+                    <a href="https://scholar.google.com/citations?user=UPiD6Q0AAAAJ&hl=en&oi=ao" target="_blank">Stefano Rosa</a>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www.linkedin.com/in/pietro-morerio-70ba2822" target="_blank">Pietro Morerio</a>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www.linkedin.com/in/pietro-morerio-70ba2822" target="_blank">Alessio Del Bue</a>,</span>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www.linkedin.com/in/pietro-morerio-70ba2822" target="_blank">Lorenzo Natale</a></span>
+                  </span>
+                  </div>
 
-<div class="image">
-    <img src="assets/framework.png"/>
-</div>
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">Italian Institute of Technology<br>ICCV 2025</span>
+                  </div>
 
-<div class="text">
-    <p>
-        We present a self-supervised method to improve an agent's abilities in describing arbitrary objects
-        while actively exploring a generic environment. This is a challenging problem, as current models struggle to
-        obtain coherent image captions due to different camera viewpoints and clutter.
-        We propose a three-phase framework to fine-tune existing captioning models that enhances caption accuracy and
-        consistency across views via a consensus mechanism.
-        First, an agent explores the environment, collecting noisy image-caption pairs.
-        Then, a consistent pseudo-caption for each object instance is distilled via consensus using a large language
-        model.
-        Finally, these pseudo-captions are used to fine-tune an off-the-shelf captioning model, with the addition of
-        contrastive learning.
-        We analyse the performance of the combination of captioning models, exploration policies, pseudo-labeling
-        methods, and fine-tuning strategies, on our manually labeled test set.
-        Results show that a policy can be trained to mine samples with higher disagreement compared to classical
-        baselines.
-        Our pseudo-captioning method, in combination with all policies, has a higher semantic similarity compared to
-        other existing methods, and fine-tuning improves caption accuracy and consistency by a significant margin.
-    </p>
-</div>
-<br>
-<div>
-    <h2 class="section">Approach</h2>
-    <div class="text">
-        <h3>Exploration</h3>
-        <p>
-            The agent navigates the environment using any exploration policy chosen by the user, allowing full flexibility in how observations are collected. 
-            In addition to this, we train a reinforcement learning (RL) policy that explicitly encourages the agent to collect object samples 
-            where the captioning model exhibits high disagreement across different viewpoints. 
-            This targeted exploration improves the quality and diversity of the collected dataset, focusing on challenging and informative samples.
-        </p>
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2504.08531" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="ai ai-arxiv"></i>
+                        </span>
+                        <span>Arxiv</span>
+                      </a>
+                    </span>
 
-        <h3>Pseudo-captioning</h3>
-        <p>
-            From the collected image-caption pairs, we apply a consensus mechanism 
-            using a large language model to distill a consistent pseudo-caption for each object instance, 
-            reducing noise from different viewpoints and descriptions.
-        </p>
+                    <!-- Supplementary PDF link
+                    <span class="link-block">
+                      <a href="pdfs/supplementary_material.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
 
-        <h3>Fine-tuning</h3>
-        <p>
-            The distilled pseudo-captions are used to fine-tune an existing captioning model. 
-            We additionally apply contrastive learning techniques to further improve consistency and semantic accuracy across multiple views of the same object.
-        </p>
-        <br><br>
-        <h3>Method Overview Video</h3>
-            <div class="video">
-                <iframe width="720" height="405"
-                    src="https://www.youtube.com/embed/tmUUT-938Xk" 
-                    title="Method Overview Video"
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/hsp-iit/embodied-captioning" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- data abstract Link -->
+                <span class="link-block">
+                  <a href="#" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark"
+                  style="pointer-events: none; opacity: 0.7;">
+                  <span class="icon">
+                   <i class="fas fa-database"></i>
+                  </span>
+                  <span>Data</span>
+                </a>
+              </span>
             </div>
-        <br><br>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
-<br>
-<br>
-<div>
-    <h2 class="section">Reference</h2>
-    <div class="text">
-        If you use the information in the paper please cite the following reference.<br><br>
-        Plain text format
-        <pre> T. Galliena, T. Apicella, S. Rosa, P. Morerio, A. Del Bue, L. Natale, <em>Embodied Image Captioning: Self-supervised Learning Agents for Spatially Coherent Image Descriptions</em>,
-arXiv preprint arXiv:2504.08531, 2025
-        </pre>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <figure style="text-align: center;">
+        <img src="assets/fig1.png" class="blend-img-background center-image" style="max-width: 100%; height: auto;" />
+          <figcaption style="font-size: 0.9em; color: #555; margin-top: 0.5em;">
+              An agent equipped with an instance segmentation and captioning model navigates the environment. Off-the-shelf captioners predict partially wrong and inconsistent captions across different views of the same object:
+              <span style="background-color: #fce5cdff">COCA</span>, <span style="background-color: #cfe2f3ff">BLIP2</span>, <span style="background-color: #d9d2e9ff">Florence2</span>, and <span style="background-color: #d9d9d9ff">ChatGPT-4</ChatGPT-4></span>.
+          </figcaption>
+      </figure>
+        <!-- Added transition paragraph -->
         <br>
-        Bibtex format
-        <pre>@article{galliena2025embodied,
-        title={Embodied Image Captioning: Self-supervised Learning Agents for Spatially Coherent Image Descriptions},
-        author={Galliena, Tommaso and Apicella, Tommaso and Rosa, Stefano and Morerio, Pietro and Del Bue, Alessio and Natale, Lorenzo},
-        journal={arXiv preprint arXiv:2504.08531},
-        year={2025}
-}
-        </pre>
+        <p style="text-align: justify; margin-top: 1.5rem;">
+            Visual understanding is a fundamental skill to recognize
+            and describe objects in a scene, enabling robots to navigate
+            and interact with the environment. Despite advances
+            in image captioning, a captioner
+            deployed on an autonomous agent often generates wrong or
+            inconsistent descriptions across different views of the same
+            object, especially in the case of occlusions or challenging
+            viewing directions.
+          </p>
+      </div>
     </div>
-</div>
+  </section>
+<!-- End teaser video -->
 
-<br>
-
-<h2 class="section">Contact</h2>
-<div class="text">
-    If you have any further enquiries, question, or comments, please open an issue on the Github repository page.
-    <br>
-    <br>
-</div>
-<br><br>
-
-<!-- Featured -->
-<div id="featured">
-    <div class="divider"></div>
-</div>
-<!-- /Featured -->
-
-<div id="footer">
-    <div class="container">
+<!-- Paper abstract -->
+<section class="section hero my-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We present a self-supervised method to improve an agent's abilities in describing arbitrary objects
+            while actively exploring a generic environment. This is a challenging problem, as current models struggle to obtain coherent image captions due to different camera viewpoints and clutter. 
+            We propose a three-phase framework to fine-tune existing captioning models that enhances caption accuracy and consistency across views via a consensus mechanism.
+            First, an agent explores the environment, collecting noisy image-caption pairs. 
+            Then, a consistent pseudo-caption for each object instance is distilled via consensus using a large language model. 
+            Finally, these pseudo-captions are used to fine-tune an off-the-shelf captioning model, with the addition of contrastive learning. 
+            We analyse the performance of the combination of captioning models, exploration policies, pseudo-labeling methods, and fine-tuning strategies, on our manually labeled test set.
+            Results show that a policy can be trained to mine samples with higher disagreement compared to classical baselines. 
+            Our pseudo-captioning method, in combination with all policies, has a higher semantic similarity compared to other existing methods, and fine-tuning improves caption accuracy and consistency by a significant margin.
+          </p>
+        </div>
+      </div>
     </div>
-</div>
-<br><br>
-</body>
-</html>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<style>
+  .hero-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .hero.is-light {
+    margin-bottom: 3rem;
+  }
+</style>
+
+<!-- Youtube video -->
+<section class="hero-body">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title has-text-centered">
+        Video Explanation
+      </h2>
+      <video poster="" id="tree" autoplay controls muted loop height="90%">
+        <source src="assets/embodied_cap.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full">
+        <div class="content" style="text-align: justify;">
+          <h2 class="title is-3" style="text-align: center;">Pipeline Overview</h2>
+          <p style="text-align: justify;">
+            Our modular framework separates exploration, pseudo-caption generations, and model training into three flexible phases. This design allows independent improvements at each stage: collecting diverse object views, generating consistent pseudo-captions via prompting, and fine-tuning with both supervision and contrastive loss to enhance caption consistency across views.
+          </p>
+
+          <!-- Image -->
+          <p style="text-align: center;">
+            <img src="assets/fig2-v7.png" alt="Overview of the pipeline" style="max-width: 100%; height: auto;" />
+          </p>
+
+          <!-- Caption -->
+          <p style="text-align: justify;">
+
+            The agent navigates to goal locations predicted by a learned policy (a). At each step, it performs instance segmentation and captioning; the detections are projected into a 3D voxel map (b). A semantic voxel map is built by accumulating segmented instances and associated captions over time (c). Captions collected for the same object are grouped along with their frequencies (d). The Language-Driven Consistent Pseudo-captioner (LD-CPS) module generates a single consistent pseudo-caption for each object using prompting and in-context learning (e). The captioner model is then fine-tuned with the pseudo-captions as supervision (f), while a triplet loss is introduced to encourage consistent visual representations across views of the same object (g).
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Carousel Section -->
+<section class="hero is-small">
+    <div class="hero-body">
+        <div class="container">
+        <h2 class="title has-text-centered">
+        Qualitative Results
+        </h2>
+            <div id="results-carousel" class="carousel results-carousel">
+                 <div class="item">
+
+                    <img src="assets/Fig-7_website-1.png"/>
+                </div> 
+                <div class="item">
+                    <!-- Your image here -->
+                    <img src="assets/Fig-7_website-2.png"/>
+                </div>
+                <div class="item">
+                    <!-- Your image here -->
+                    <img src="assets/Fig-7_website-3.png"/>
+                </div>
+            </div>
+            <p class="has-text-centered mt-4" style="font-size: 1.3em; text-align: justify;">
+        <strong> Qualitative examples: </strong> Examples of predicted captions before and after fine-
+          tuning for different object views. We highlight mistakes
+          and correct details in generated captions. KEYS – C: off-
+          the-shelf CoCa, C-FT: fine-tuned (triplet loss) CoCa, B:
+          BLIP2, B-FT: fine-tuned (triplet loss) BLIP2.
+      </p>
+        </div>
+    </div>
+</section>
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@misc{galliena2025embodiedimagecaptioningselfsupervised,
+      title={Embodied Image Captioning: Self-supervised Learning Agents for Spatially Coherent Image Descriptions}, 
+      author={Tommaso Galliena and Tommaso Apicella and Stefano Rosa and Pietro Morerio and Alessio Del Bue and Lorenzo Natale},
+      year={2025},
+      eprint={2504.08531},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2504.08531}, 
+}</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
