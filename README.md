@@ -152,12 +152,11 @@ If you find an error, if you want to suggest a new feature or a change, you can 
 
 
 ```
-@article{galliena2025embodied,
-        title={Embodied Image Captioning: Self-supervised Learning Agents for Spatially Coherent Image Descriptions},
-        author={Galliena, Tommaso and Apicella, Tommaso and Rosa, Stefano and Morerio, Pietro and Del Bue, Alessio and Natale, Lorenzo},
-        journal={arXiv preprint arXiv:2504.08531},
-        year={2025}
-}
+@inproceedings{galliena2025embodied,
+  title={Embodied Image Captioning: Self-supervised Learning Agents for Spatially Coherent Image Descriptions},
+  author={Galliena, Tommaso and Apicella, Tommaso and Rosa, Stefano and Morerio, Pietro and Del Bue, Alessio and Natale, Lorenzo},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  year={2025}
 ```
 
 
