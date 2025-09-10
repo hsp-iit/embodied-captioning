@@ -13,3 +13,6 @@
 [submodule "third_parties/hf-transformers"]
 	path = third_parties/hf-transformers
 	url = https://github.com/apicis/hf-transformers
+[submodule "third_parties/pycocoevalcap"]
+	path = third_parties/pycocoevalcap
+	url = https://github.com/apicis/pycocoevalcap.git
